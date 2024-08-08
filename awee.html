@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Carousel</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Carousel */
+  .carousel {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Carousel items */
+  .carousel-item {
+    height: 300px;
+    background-color: #ffc0cb; /* Light pink background */
+    position: relative;
+  }
+
+  /* Decorative triangle */
+  .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-bottom: 100px solid yellow; /* Yellow triangle */
+  }
+
+  .triangle.bottom-right {
+    top: auto;
+    bottom: 0;
+    border-bottom: none;
+    border-top: 100px solid yellow; /* Yellow triangle */
+  }
+
+  /* Carousel controls */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: #ffc0cb; /* Light pink background */
+    border: none;
+  }
+
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    background-color: black; /* Hover background color */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='yellow' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+  }
+
+  /* Content styling */
+  .carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div id="carouselExample" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="triangle"></div>
+      <div class="carousel-content">
+        <h1>Slide 1 Heading</h1>
+        <p>Slide 1 Paragraph</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="triangle"></div>
+      <div class="carousel-content">
+        <h1>Slide 2 Heading</h1>
+        <p>Slide 2 Paragraph</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="triangle bottom-right"></div>
+      <div class="carousel-content">
+        <h1>Slide 3 Heading</h1>
+        <p>Slide 3 Paragraph</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $('#carouselExample').carousel();
+</script>
+
+</body>
+</html>
